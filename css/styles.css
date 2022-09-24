@@ -11626,41 +11626,7 @@ footer a:hover, footer a:active, footer a:focus {
   }
 }
 
-/* Rotating globe in css */
-/* https://stackoverflow.com/questions/27781634/rotating-globe-in-css */
-#earth {
-  width: 300px;
-  height: 300px;
-  /* background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg); */
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/World_location_map_%28equirectangular_180%29.svg/800px-World_location_map_%28equirectangular_180%29.svg.png);
-  border-radius: 50%;
-  background-size: 610px;
-  box-shadow: inset 0px 0px 50px 0px rgb(0, 0, 0), inset -6px 0 12px 4px rgba(255, 255, 255, 0.1);
-  animation-name: rotate;
-  animation-duration: 12s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  -webkit-animation-name: rotate;
-     -webkit-animation-duration: 12s;
-     -webkit-animation-iteration-count: infinite;
-     -webkit-animation-timing-function: linear;
-}
-@keyframes rotate {
-  from {
-    background-position: 0px 0px;
-  }
-  to {
-    background-position: 610px 0px;
-  }
-}
-@-webkit-keyframes rotate {
-  from {
-    background-position: 0px 0px;
-  }
-  to {
-    background-position: 610px 0px;
-  }
-}
+/* first image css */
 
 .intro-img{
   width: 50%;
@@ -11669,6 +11635,7 @@ footer a:hover, footer a:active, footer a:focus {
   filter: drop-shadow(10px 10px 5px black);
 }
 
+/* floating action button  */
 /* https://codepen.io/neel2292/pen/bVLGMO */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic);
@@ -11853,4 +11820,185 @@ footer a:hover, footer a:active, footer a:focus {
 [tooltip]:hover:after {
   visibility: visible;
   opacity: 1;
+}
+
+/* Rotating globe in css */
+/* https://stackoverflow.com/questions/27781634/rotating-globe-in-css */
+#earth {
+  /* change this for earth */
+  margin-left: -6em;
+  margin-top: -5em;
+  width: 200px;
+  height: 200px;
+  /* background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg); */
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/World_location_map_%28equirectangular_180%29.svg/800px-World_location_map_%28equirectangular_180%29.svg.png);
+  border-radius: 50%;
+  background-size: 400px;
+  box-shadow: inset 0px 0px 50px 0px rgb(0, 0, 0), inset -6px 0 12px 4px rgba(255, 255, 255, 0.1);
+  animation-name: rotate;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+     -webkit-animation-duration: 15s;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 610px 0px;
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 610px 0px;
+  }
+}
+
+/* CSS 3D Planet with Satellite by Cory Hughart */
+/* https://codepen.io/cr0ybot/pen/PwwaPP */
+
+* {
+  box-sizing: border-box;
+}
+
+#orbit-system {
+  position: relative;
+  width: 18em;
+  height: 18em;
+  margin: 0 auto;
+}
+
+.system {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  -webkit-transform: rotateX(75deg) rotateY(-30deg);
+  transform: rotateX(75deg) rotateY(-30deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.planet, .satellite-orbit, .satellite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.planet {
+  width: 9em;
+  height: 9em;
+  margin-top: -4.5em;
+  margin-left: -4.5em;
+  
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  
+  text-align: center;
+  line-height: 9em;
+  
+  -webkit-transform: rotateY(30deg) rotateX(-75deg);
+  transform: rotateY(30deg) rotateX(-75deg);
+}
+
+.satellite-orbit {
+  /* change this for satellite */
+	width: 20em;
+  height: 20em;
+  margin-top: -10em;
+  margin-left: -10em;
+  
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  
+  -webkit-animation-name: orbit;
+  animation-name: orbit;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.satellite {
+  /* https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ACommunications_satellite_with_TEMPO_spacecraft_model.png&psig=AOvVaw10qjvizwpLyUELqffPlpwI&ust=1664125753632000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNi28NT1rfoCFQAAAAAdAAAAABAD */
+  background: url(https://upload.wikimedia.org/wikipedia/commons/5/5b/Communications_satellite_with_TEMPO_spacecraft_model.png);
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+
+  top: 100%;
+  width: 3em;
+  height: 3em;
+  margin-top: -1.5em;
+  margin-left: -1.5em;
+  
+  /* color: black;
+  background-color: #999;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 3em; */
+  
+  -webkit-animation-name: invert-orbit;
+  animation-name: invert-orbit;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes orbit {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+@keyframes orbit {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/*
+In order to invert the rotation, do the rotate* transforms in reverse order.
+
+Here, we rotated the system with rotateX(75deg) rotateY(-30deg), and then we are animating the rotation of the orbit with rotateZ(0-360deg). To reverse that, we need to reverse the last transform applied (rotateZ), then rotateY, then rotateX.
+
+The rotateX/Y reversal is easy since it's not animated, so just use its opposite (30deg, -75deg). The rotateZ is trickier since it's animating, but since it's rotating from 0 to 360, we just need to animate the satellite from 360 to 0.
+*/
+@-webkit-keyframes invert-orbit {
+    0% {
+        transform: rotateZ(360deg) rotateY(30deg) rotateX(-75deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg) rotateY(30deg) rotateX(-75deg);
+    }
+}
+@keyframes invert-orbit {
+    0% {
+        transform: rotateZ(360deg) rotateY(30deg) rotateX(-75deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg) rotateY(30deg) rotateX(-75deg);
+    }
 }
