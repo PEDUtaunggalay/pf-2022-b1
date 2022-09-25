@@ -103,7 +103,7 @@ hr:not([size]) {
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 600;
   line-height: 1.2;
@@ -11626,13 +11626,17 @@ footer a:hover, footer a:active, footer a:focus {
   }
 }
 
-/* first image css */
-
+/* The First Vertical Image CSS */
 .intro-img{
   width: 50%;
   height: 100%;
-  
   filter: drop-shadow(10px 10px 5px black);
+}
+
+/* The Second Horizontal Image CSS */
+.announcement-img{
+  width: 100%;
+  height: 100%;
 }
 
 /* floating action button  */
@@ -11822,7 +11826,7 @@ footer a:hover, footer a:active, footer a:focus {
   opacity: 1;
 }
 
-/* Rotating globe in css */
+/* Rotating globe in CSS by The Pragmatick*/
 /* https://stackoverflow.com/questions/27781634/rotating-globe-in-css */
 #earth {
   /* change this for earth */
